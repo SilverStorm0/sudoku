@@ -4,27 +4,21 @@
 
 using namespace std;
 
-int main() {
-
-
-    return 0;
-}
-;
 
 int bordesuperior(){
     for (int op=0; op<31; op++){
         cout << "-";
     }
-    return 0;
+
 }
 
 void sudoku(){
     //declaro variables
-    int sud[9][9],cont=0,ale;
+    int sud[9][9] = {0}, cont = 0, ale;
     bool conta = true;
-    ale = rand()%9809+pow(10,rand()%97989);
+    ale = (rand() % 9) + 1;
     srand(ale);
-    //creo losd vzlores del sudoku
+    //creo los valores del sudoku
     for (int i=0 ; i<9 ; i++){
         for (int j=0 ; j<9 ; j++){
             sud[i][j] = rand()%8 + 1;
@@ -68,7 +62,6 @@ void sudoku(){
     }
     //Verifica las columnas
     for (int q=0 ; q<9 ; q++){
-        int e=q;
         for (int w=0 ; w<9 ; w++){
             if (sud[q+w][w]==sud[q][w]){
                 cont++;
